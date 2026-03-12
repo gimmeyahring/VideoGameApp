@@ -32,18 +32,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/peakherobanner"
-                />
+                app:srcCompat="@drawable/peakherobanner" />
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="137dp"
                 android:layout_height="211dp"
+                android:layout_marginTop="133dp"
                 android:background="@color/asphaltwhisper"
                 android:padding="4dp"
+                app:layout_constraintTop_toTopOf="@+id/herobannerid"
                 app:srcCompat="@drawable/peakherothumbnail"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="133dp" />
+                tools:layout_editor_absoluteX="16dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
