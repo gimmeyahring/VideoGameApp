@@ -27,7 +27,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="top"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-264dp">
+        tools:layout_editor_absoluteY="-264dp"
+        android:id="@+id/mainLayout2">
 
 
         <ImageView
@@ -41,7 +42,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/herothumbnailid"
             android:layout_width="137sp"
             android:layout_height="211sp"
             android:layout_marginStart="16dp"
@@ -55,7 +56,7 @@
             />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/gametitleTextview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -65,11 +66,10 @@
             android:textColor="@color/white"
             android:textSize="40sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toEndOf="@+id/herothumbnailid"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="26dp"
@@ -82,7 +82,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/gameexpandabledescriptionTextview"
             android:layout_width="373dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
