@@ -43,6 +43,26 @@ public class Game {
         this.heroThumbnail = heroThumbnail;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getPublishers() {
+        return publishers;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getHeroBanner() {
+        return heroBanner;
+    }
+
+    public int getHeroThumbnail() {
+        return heroThumbnail;
+    }
+
     @Override
     public String toString() {
         return "Game{" +
