@@ -37,6 +37,12 @@ public class GameActivity extends AppCompatActivity {
         gameDescriptionTV = findViewById(R.id.gameexpandabledescriptionTextview);
         peak = new Game(getString(R.string.gamePeakTitle), "Landfall", getString(R.string.gamePeakDescription), R.drawable.peakherobanner, R.drawable.peakherothumbnail);
 
+        gameTitleTV.setText(peak.getTitle());
+        gameDescriptionTV.setText(peak.getDescription());
+        heroBannerIV.setImageResource(peak.getHeroBanner());
+        heroThumbnailIV.setImageResource(peak.getHeroThumbnail());
+
+
 
 
 
