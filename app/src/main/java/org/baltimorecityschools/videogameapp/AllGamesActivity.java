@@ -12,17 +12,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AllGamesActivity extends AppCompatActivity {
 
-    Button gameButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_games);
-        gameButton = findViewById(R.id.button);
-
-        gameButton.setOnClickListener(view -> {
-            startActivity(new Intent(this, GameActivity.class));
-        });
 
 
     }
