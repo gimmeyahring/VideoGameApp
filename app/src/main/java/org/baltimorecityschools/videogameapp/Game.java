@@ -3,6 +3,7 @@ package org.baltimorecityschools.videogameapp;
 public class Game {
     String title;
     String publishers;
+    String developers;
     String description;
     int heroBanner;
     int heroThumbnail;
@@ -10,14 +11,16 @@ public class Game {
     public Game(){
         title = "";
         publishers = "";
+        developers = "";
         description = "";
         heroBanner = 0;
         heroThumbnail = 0;
     }
 
-    public Game(String title, String publishers, String description, int heroBanner, int heroThumbnail) {
+    public Game(String title, String publishers, String developers, String description, int heroBanner, int heroThumbnail) {
         this.title = title;
         this.publishers = publishers;
+        this.developers = developers;
         this.description = description;
         this.heroBanner = heroBanner;
         this.heroThumbnail = heroThumbnail;
@@ -30,6 +33,8 @@ public class Game {
     public void setPublishers(String publishers) {
         this.publishers = publishers;
     }
+
+    public void setDevelopers(String developers) {this.developers = developers;}
 
     public void setDescription(String description) {
         this.description = description;
@@ -47,21 +52,16 @@ public class Game {
         return title;
     }
 
-    public String getPublishers() {
-        return publishers;
-    }
+    public String getPublishers() {return publishers;}
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDevelopers() {return developers;}
 
-    public int getHeroBanner() {
-        return heroBanner;
-    }
 
-    public int getHeroThumbnail() {
-        return heroThumbnail;
-    }
+    public String getDescription() {return description;}
+
+    public int getHeroBanner() {return heroBanner;}
+
+    public int getHeroThumbnail() {return heroThumbnail;}
 
     @Override
     public String toString() {

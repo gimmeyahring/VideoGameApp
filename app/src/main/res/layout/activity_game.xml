@@ -1,106 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:id="@+id/main"
     android:background="@color/chromophobicblack"
-    tools:context=".GameActivity">
 
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ScrollView
-        android:id="@+id/gamescrollviewid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/gamescrollviewid"
         >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/herobannerid"
+                    android:layout_width="662dp"
+                    android:layout_height="205dp"
+                    android:layout_marginBottom="104dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/herothumbnailid"
+                    android:layout_width="137sp"
+                    android:layout_height="211sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="100dp"
+                    android:background="@drawable/roundconers"
+                    android:paddingHorizontal="2dp"
+                    android:paddingVertical="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/gametitleTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="196dp"
+                    android:fontFamily="@font/robotovariablefontwdthwght"
+                    android:text="@string/loremispum"
+                    android:textColor="@color/white"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/herothumbnailid"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:text="@string/Gamedesc"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"/>
+
+            <TextView
+                android:id="@+id/gameexpandabledescriptionTextview"
+                android:layout_width="373dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundconers"
+                android:clickable="true"
+                android:gravity="center"
+                android:maxHeight="110dp"
+                android:paddingHorizontal="2sp"
+                android:paddingVertical="5sp"
+                android:text="@string/Loremispumparagraph"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:text="@string/gameUp"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"/>
+
+            <TextView
+                android:id="@+id/gameexpandableupdatesTextview"
+                android:layout_width="373dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundconers"
+                android:clickable="true"
+                android:gravity="center"
+                android:maxHeight="110dp"
+                android:paddingHorizontal="2sp"
+                android:paddingVertical="5sp"
+                android:text="@string/Loremispumparagraph"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gamedev"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="normal"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="15dp"/>
+
+                <TextView
+                    android:id="@+id/gamedeveloperTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loremispum"
+                    android:textColor="@color/twitterblue"
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    android:paddingTop="5dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gamepub"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="normal"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="15dp"/>
+
+                <TextView
+                    android:id="@+id/gamepublisherTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loremispum"
+                    android:textColor="@color/twitterblue"
+                    android:textSize="25sp"
+                    android:textStyle="italic"
+                    android:paddingTop="5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </ScrollView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="top"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-264dp"
-        android:id="@+id/mainLayout2">
-
-
-        <ImageView
-            android:id="@+id/herobannerid"
-            android:layout_width="662dp"
-            android:layout_height="205dp"
-            android:layout_marginBottom="688dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/herothumbnailid"
-            android:layout_width="137sp"
-            android:layout_height="211sp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/roundconers"
-            android:paddingHorizontal="2dp"
-            android:paddingVertical="4dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            />
-
-        <TextView
-            android:id="@+id/gametitleTextview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="196dp"
-            android:fontFamily="@font/robotovariablefontwdthwght"
-            android:text="@string/loremispum"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/herothumbnailid"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="322dp"
-            android:text="@string/Gamedesc"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/gameexpandabledescriptionTextview"
-            android:layout_width="373dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="356dp"
-            android:background="@drawable/roundconers"
-            android:clickable="true"
-            android:gravity="center"
-            android:maxHeight="110dp"
-            android:paddingHorizontal="2sp"
-            android:paddingVertical="5sp"
-            android:text="@string/Loremispumparagraph"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
