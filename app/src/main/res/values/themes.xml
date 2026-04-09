@@ -10,6 +10,12 @@
     <style name="SquareText" parent="Widget.MaterialComponents.TextView">
         <item name="cornerRadius">100dp</item>
     </style>
-
+    <style name="MyToolbarTheme" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <!-- This changes the color of the overflow icon and navigation icon -->
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+    <style name="NavDrawerTextStyle">
+        <item name="android:textSize">25sp</item>
+    </style>
     <style name="Theme.VideoGameApp" parent="Base.Theme.VideoGameApp" />
 </resources>
