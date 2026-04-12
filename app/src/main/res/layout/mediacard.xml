@@ -26,7 +26,7 @@
                 android:id="@+id/mediacard_thumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-
+                android:contentDescription="Thumbnail image for media card."
                 android:paddingTop="15dp"
                 android:scaleType="centerCrop"
                  />
