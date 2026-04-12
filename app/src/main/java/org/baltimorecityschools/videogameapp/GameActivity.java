@@ -38,7 +38,7 @@ public class GameActivity extends AppCompatActivity {
         heroThumbnailIV = findViewById(R.id.herothumbnailid);
         gameTitleTV = findViewById(R.id.gametitleTextview);
         gameDescriptionTV = findViewById(R.id.gameexpandabledescriptionTextview);
-        peak = new Game(getString(R.string.gamePeakTitle), getString(R.string.gamePeakPublisher), getString(R.string.gamePeakDeveloper), getString(R.string.gamePeakDescription), R.drawable.peakherobanner, R.drawable.peakherothumbnail);
+
 
         gameTitleTV.setText(peak.getTitle());
         gameDescriptionTV.setText(peak.getDescription());

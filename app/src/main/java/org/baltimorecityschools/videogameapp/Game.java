@@ -7,6 +7,7 @@ public class Game {
     String description;
     int heroBanner;
     int heroThumbnail;
+    
 
     public Game(){
         title = "";
