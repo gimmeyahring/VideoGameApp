@@ -1,5 +1,6 @@
 package org.baltimorecityschools.videogameapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -13,8 +14,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class GameActivity extends AppCompatActivity {
-
-    Game peak;
 
     ScrollView gameScrollView;
     ImageView heroBannerIV;
@@ -30,6 +29,14 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
+        String description = intent.getStringExtra("description");
+        String developer = intent.getStringExtra("developer");
+        String publisher = intent.getStringExtra("publisher");
+        int banner = intent.getIntExtra("banner", 0);
+        int thumbnail = intent.getIntExtra("thumbnail", 0);
+
         gameScrollView = findViewById(R.id.gamescrollviewid);
         gameUpdatesTV = findViewById(R.id.gameexpandableupdatesTextview);
         gameDeveloperTV = findViewById(R.id.gamedeveloperTextview);
@@ -39,19 +46,17 @@ public class GameActivity extends AppCompatActivity {
         gameTitleTV = findViewById(R.id.gametitleTextview);
         gameDescriptionTV = findViewById(R.id.gameexpandabledescriptionTextview);
 
+        gameUpdatesTV.setText(description);
+        gameDeveloperTV.setText(developer);
+        gamePublisherTV.setText(publisher);
+        heroBannerIV.setImageResource(banner);
+        heroThumbnailIV.setImageResource(thumbnail);
+        gameTitleTV.setText(title);
+        gameDescriptionTV.setText(description);
 
-        gameTitleTV.setText(peak.getTitle());
-        gameDescriptionTV.setText(peak.getDescription());
-        heroBannerIV.setImageResource(peak.getHeroBanner());
-        heroThumbnailIV.setImageResource(peak.getHeroThumbnail());
-        gameDeveloperTV.setText(peak.getDevelopers());
-        gamePublisherTV.setText(peak.getPublishers());
+        gameDescriptionTV.setOnClickListener(v -> {
 
-
-
-
-
-
+        });
 
     }
 }

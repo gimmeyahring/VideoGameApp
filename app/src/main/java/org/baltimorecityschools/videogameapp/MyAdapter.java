@@ -1,5 +1,6 @@
 package org.baltimorecityschools.videogameapp;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,11 +39,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         holder.gametitletext.setText(game.getTitle());
         holder.gameimage.setImageResource(game.getHeroThumbnail());
+        holder.itemView.setOnClickListener(v -> {
+
+            Intent intent = new Intent(v.getContext(), GameActivity.class);
+
+            intent.putExtra("title", game.getTitle());
+            intent.putExtra("description", game.getDescription());
+            intent.putExtra("developer", game.getDevelopers());
+            intent.putExtra("publisher", game.getPublishers());
+            intent.putExtra("banner", game.getHeroBanner());
+            intent.putExtra("thumbnail", game.getHeroThumbnail());
+
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
     public int getItemCount() {
         return data.size();
     }
+
+
 
 }
