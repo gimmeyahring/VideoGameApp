@@ -23,25 +23,25 @@
             android:gravity="center">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/herobannerid"
-                    android:layout_width="662dp"
+                    android:layout_width="match_parent"
                     android:layout_height="205dp"
-                    android:layout_marginBottom="104dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.501"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:src="@drawable/peakherobanner"
+                    app:layout_constraintBottom_toTopOf="@+id/gametitleTextview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
 
                 <ImageView
                     android:id="@+id/herothumbnailid"
                     android:layout_width="137sp"
                     android:layout_height="211sp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginTop="76dp"
                     android:background="@drawable/roundconers"
                     android:paddingHorizontal="2dp"
                     android:paddingVertical="4dp"
@@ -52,15 +52,26 @@
                     android:id="@+id/gametitleTextview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="200dp"
+                    android:layout_marginStart="161dp"
+                    android:layout_marginTop="132dp"
                     android:fontFamily="@font/robotovariablefontwdthwght"
                     android:text="@string/loremispum"
                     android:textColor="@color/white"
                     android:textSize="40sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/herothumbnailid"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/tagContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    app:flexWrap="wrap"
+                    app:justifyContent="flex_start"
+                    tools:layout_editor_absoluteX="172dp"
+                    tools:layout_editor_absoluteY="208dp"
+                    />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
@@ -81,7 +92,7 @@
                 android:background="@drawable/roundconers"
                 android:clickable="true"
                 android:gravity="center"
-                android:maxHeight="110dp"
+                android:maxLines="6"
                 android:paddingHorizontal="2sp"
                 android:paddingVertical="5sp"
                 android:text="@string/Loremispumparagraph"
@@ -107,7 +118,7 @@
                 android:background="@drawable/roundconers"
                 android:clickable="true"
                 android:gravity="center"
-                android:maxHeight="110dp"
+                android:maxLines="6"
                 android:paddingHorizontal="2sp"
                 android:paddingVertical="5sp"
                 android:text="@string/Loremispumparagraph"

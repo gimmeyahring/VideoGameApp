@@ -1,5 +1,7 @@
 package org.baltimorecityschools.videogameapp;
 
+import java.util.List;
+
 public class Game {
     String title;
     String publishers;
@@ -7,6 +9,7 @@ public class Game {
     String description;
     int heroBanner;
     int heroThumbnail;
+    List<String> tags;
     
 
     public Game(){
@@ -18,13 +21,14 @@ public class Game {
         heroThumbnail = 0;
     }
 
-    public Game(String title, String publishers, String developers, String description, int heroBanner, int heroThumbnail) {
+    public Game(String title, String publishers, String developers, String description, int heroBanner, int heroThumbnail, List<String> tags) {
         this.title = title;
         this.publishers = publishers;
         this.developers = developers;
         this.description = description;
         this.heroBanner = heroBanner;
         this.heroThumbnail = heroThumbnail;
+        this.tags = tags;
     }
 
     public void setTitle(String title) {
@@ -63,6 +67,8 @@ public class Game {
     public int getHeroBanner() {return heroBanner;}
 
     public int getHeroThumbnail() {return heroThumbnail;}
+
+    public List<String> getTags() {return tags;}
 
     @Override
     public String toString() {

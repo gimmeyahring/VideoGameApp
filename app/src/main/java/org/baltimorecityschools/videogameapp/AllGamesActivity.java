@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AllGamesActivity extends AppCompatActivity {
@@ -28,7 +29,10 @@ public class AllGamesActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         List<Game> gameList = new ArrayList<>();
 
-        gameList.add(new Game(getString(R.string.gamePeakTitle), getString(R.string.gamePeakPublisher), getString(R.string.gamePeakDeveloper), getString(R.string.gamePeakDescription), R.drawable.peakherobanner, R.drawable.peakherothumbnail));
+        List<String> peakTags = new ArrayList<>(
+                Arrays.asList("Multiplayer", "Co-op", "Indie", "Platformer"));
+
+        gameList.add(new Game(getString(R.string.gamePeakTitle), getString(R.string.gamePeakPublisher), getString(R.string.gamePeakDeveloper), getString(R.string.gamePeakDescription), R.drawable.peakherobanner, R.drawable.peakherothumbnail, peakTags));
 
         MyAdapter adapter = new MyAdapter(gameList);
         recyclerView.setAdapter(adapter);

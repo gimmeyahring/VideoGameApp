@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
@@ -42,6 +43,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.itemView.setOnClickListener(v -> {
 
             Intent intent = new Intent(v.getContext(), GameActivity.class);
+            intent.putStringArrayListExtra("tags", new ArrayList<>(game.getTags()));
 
             intent.putExtra("title", game.getTitle());
             intent.putExtra("description", game.getDescription());
