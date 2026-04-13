@@ -1,20 +1,17 @@
-package org.baltimorecityschools.videogameapp;
+package org.baltimorecityschools.gamel;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.core.content.ContextCompat;
 
-import com.google.android.flexbox.FlexboxLayout;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 
 import java.util.ArrayList;
 
@@ -44,9 +41,10 @@ public class GameActivity extends AppCompatActivity {
         String publisher = intent.getStringExtra("publisher");
         int banner = intent.getIntExtra("banner", 0);
         int thumbnail = intent.getIntExtra("thumbnail", 0);
-        String updates = getString(R.string.Loremispumparagraph);
+        String updates = intent.getStringExtra("updates");
         ArrayList<String> tags = getIntent().getStringArrayListExtra("tags");
-        FlexboxLayout tagContainer = findViewById(R.id.tagContainer);
+        ChipGroup tagContainer = findViewById(R.id.tagContainer);
+
 
 
         gameScrollView = findViewById(R.id.gamescrollviewid);
@@ -88,34 +86,27 @@ public class GameActivity extends AppCompatActivity {
 
         if (tags != null) {
             for (String tag : tags) {
-                TextView tagTextView = new TextView(this);
-                tagTextView.setText(tag);
-                tagTextView.setTextColor(getResources().getColor(R.color.white));
-                tagTextView.setPadding(30, 15, 30, 15);
-                tagTextView.setBackgroundResource(R.drawable.tagback);
 
-                FlexboxLayout.LayoutParams params =
-                        new FlexboxLayout.LayoutParams(
-                                FlexboxLayout.LayoutParams.WRAP_CONTENT,
-                                FlexboxLayout.LayoutParams.WRAP_CONTENT
-                        );
+                Chip chip = new Chip(this);
+                chip.setText(tag);
 
-                params.setMargins(10, 10, 10, 10);
-                tagTextView.setLayoutParams(params);
+                // Style
+                chip.setTextColor(ContextCompat.getColor(this, R.color.white));
+                chip.setChipBackgroundColorResource(R.color.asphaltwhisper);
+                chip.setChipCornerRadius(50f);
+                chip.setTextSize(12f);
+                tagContainer.setChipSpacingVertical(0);
 
-                // 4. Click behavior
-                tagTextView.setOnClickListener(v -> {
-                    Toast.makeText(this, "Clicked: " + tag, Toast.LENGTH_SHORT).show();
-                });
 
-                // 5. Add to screen
-                tagContainer.addView(tagTextView);
+                // Optional: stroke (outline look)
+                chip.setChipStrokeWidth(2f);
+                chip.setChipStrokeColorResource(R.color.coolasphaltwhisper);
 
+                // Optional: click behavior
+
+
+                tagContainer.addView(chip);
             }
         }
-
-
-
-
     }
 }

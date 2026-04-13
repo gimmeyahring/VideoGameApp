@@ -1,4 +1,4 @@
-package org.baltimorecityschools.videogameapp;
+package org.baltimorecityschools.gamel;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ public class Game {
     String publishers;
     String developers;
     String description;
+    String updates;
     int heroBanner;
     int heroThumbnail;
     List<String> tags;
@@ -17,15 +18,17 @@ public class Game {
         publishers = "";
         developers = "";
         description = "";
+        updates = "";
         heroBanner = 0;
         heroThumbnail = 0;
     }
 
-    public Game(String title, String publishers, String developers, String description, int heroBanner, int heroThumbnail, List<String> tags) {
+    public Game(String title, String publishers, String developers, String description, String updates, int heroBanner, int heroThumbnail, List<String> tags) {
         this.title = title;
         this.publishers = publishers;
         this.developers = developers;
         this.description = description;
+        this.updates = updates;
         this.heroBanner = heroBanner;
         this.heroThumbnail = heroThumbnail;
         this.tags = tags;
@@ -44,6 +47,9 @@ public class Game {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void setUpdates(String updates) {this.updates = updates;}
+
 
     public void setHeroBanner(int heroBanner) {
         this.heroBanner = heroBanner;
@@ -64,6 +70,9 @@ public class Game {
 
     public String getDescription() {return description;}
 
+    public String getUpdates() {return updates;}
+
+
     public int getHeroBanner() {return heroBanner;}
 
     public int getHeroThumbnail() {return heroThumbnail;}
@@ -75,9 +84,12 @@ public class Game {
         return "Game{" +
                 "title='" + title + '\'' +
                 ", publishers='" + publishers + '\'' +
+                ", developers='" + developers + '\'' +
                 ", description='" + description + '\'' +
+                ", updates='" + updates + '\'' +
                 ", heroBanner=" + heroBanner +
                 ", heroThumbnail=" + heroThumbnail +
+                ", tags=" + tags +
                 '}';
     }
 }

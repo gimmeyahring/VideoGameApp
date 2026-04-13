@@ -1,4 +1,4 @@
-package org.baltimorecityschools.videogameapp;
+package org.baltimorecityschools.gamel;
 
 import android.content.Context;
 

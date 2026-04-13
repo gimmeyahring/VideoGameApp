@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "org.baltimorecityschools.videogameapp"
+    namespace = "org.baltimorecityschools.gamel"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "org.baltimorecityschools.videogameapp"
+        applicationId = "org.baltimorecityschools.gamel"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
@@ -42,4 +42,5 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(libs.flexbox)
+    implementation("com.google.android.material:material:1.11.0")
 }
