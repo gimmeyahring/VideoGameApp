@@ -51,6 +51,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             intent.putExtra("publisher", game.getPublishers());
             intent.putExtra("banner", game.getHeroBanner());
             intent.putExtra("thumbnail", game.getHeroThumbnail());
+            intent.putExtra("updates", game.getUpdates());
 
             v.getContext().startActivity(intent);
         });

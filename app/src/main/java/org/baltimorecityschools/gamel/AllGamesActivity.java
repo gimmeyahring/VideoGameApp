@@ -26,7 +26,7 @@ public class AllGamesActivity extends AppCompatActivity {
         List<String> peakTags = new ArrayList<>(
                 Arrays.asList("Multiplayer", "Co-op", "Indie", "Platformer"));
 
-        gameList.add(new Game(getString(R.string.gamePeakTitle), getString(R.string.gamePeakPublisher), getString(R.string.gamePeakDeveloper), getString(R.string.gamePeakDescription), getString(R.string.loremispumparagraph), R.drawable.peakherobanner, R.drawable.peakherothumbnail, peakTags));
+        gameList.add(new Game(getString(R.string.gamePeakTitle), getString(R.string.gamePeakPublisher), getString(R.string.gamePeakDeveloper), getString(R.string.gamePeakDescription), getString(R.string.gamePeakUpdates), R.drawable.peakherobanner, R.drawable.peakherothumbnail, peakTags));
 
         MyAdapter adapter = new MyAdapter(gameList);
         recyclerView.setAdapter(adapter);
