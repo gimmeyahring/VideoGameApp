@@ -43,7 +43,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.itemView.setOnClickListener(v -> {
 
             Intent intent = new Intent(v.getContext(), GameActivity.class);
-            intent.putStringArrayListExtra("tags", new ArrayList<>(game.getTags()));
+            if (game.getTags() != null) {
+                intent.putStringArrayListExtra("tags", new ArrayList<>(game.getTags()));
+            }
 
             intent.putExtra("title", game.getTitle());
             intent.putExtra("description", game.getDescription());
