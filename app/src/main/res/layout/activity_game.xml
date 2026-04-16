@@ -31,9 +31,12 @@
                     android:layout_width="0dp"
                     android:layout_height="205dp"
                     android:src="@drawable/peakherobanner"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:paddingBottom="20dp"
+                    />
 
                 <ImageView
                     android:id="@+id/herothumbnailid"
@@ -50,10 +53,10 @@
                 <LinearLayout
                     android:id="@+id/titleTagContainer"
                     android:layout_width="0dp"
-                    android:layout_height="110dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="175dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="155dp"
 
                     app:layout_constraintStart_toEndOf="@id/herothumbnailid"
                     app:layout_constraintTop_toTopOf="parent"
@@ -62,7 +65,7 @@
                     <TextView
                         android:id="@+id/gametitleTextview"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/robotovariablefontwdthwght"
                         android:text="@string/loremispum"
                         android:textColor="@color/white"
@@ -188,6 +191,10 @@
                     android:paddingTop="5dp"/>
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
 
         </LinearLayout>
 
