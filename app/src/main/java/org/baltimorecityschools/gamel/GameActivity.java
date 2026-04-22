@@ -106,7 +106,16 @@ public class GameActivity extends AppCompatActivity {
 
 
                 tagContainer.addView(chip);
+
+                chip.setOnClickListener(v -> {
+                    Intent tagintent = new Intent(this, TagActivity.class);
+                    tagintent.putExtra("tag", tag);
+                    startActivity(tagintent);
+                });
+
             }
         }
+
+
     }
 }
