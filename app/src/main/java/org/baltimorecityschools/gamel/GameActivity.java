@@ -42,7 +42,7 @@ public class GameActivity extends AppCompatActivity {
         int banner = intent.getIntExtra("banner", 0);
         int thumbnail = intent.getIntExtra("thumbnail", 0);
         String updates = intent.getStringExtra("updates");
-        ArrayList<String> tags = getIntent().getStringArrayListExtra("tags");
+        ArrayList<String> tags = intent.getStringArrayListExtra("tags");
         ChipGroup tagContainer = findViewById(R.id.tagContainer);
 
 

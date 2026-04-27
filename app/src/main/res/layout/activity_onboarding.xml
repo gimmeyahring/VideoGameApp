@@ -16,45 +16,40 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hometext"
+        android:text="@string/onboardingtext"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:paddingStart="15dp"/>
+        android:paddingStart="15dp"
+        android:id="@+id/onboardingTextview"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="25dp"/>
 
-    <include
-        layout="@layout/recommendationmediacard"
-        android:id="@+id/recomendationMediacard"/>
-
-    <View
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/onboardingChipGroup"
         android:layout_width="match_parent"
-        android:layout_height="25dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/allgamesButton"
-        android:text="@string/all_gamestext"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        style="@style/SquareButton"
-        android:backgroundTint="@color/navigationcolor"
+        app:singleLine="false"
+        app:selectionRequired="false"
+        android:paddingHorizontal="15dp"
         android:gravity="center"
-        android:layout_gravity="center"/>
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="25dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/preferrencesButton"
-        android:text="@string/preferrencestext"
+        android:id="@+id/doneButton"
+        android:text="@string/done"
         android:textColor="@color/white"
         android:textSize="15sp"
         style="@style/SquareButton"
-        android:backgroundTint="@color/navigationcolor"
+        android:backgroundTint="@color/asphaltwhisper"
         android:gravity="center"
         android:layout_gravity="center"/>
 

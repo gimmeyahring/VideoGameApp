@@ -36,6 +36,12 @@
     <string name="gameRocketleaguepublisher">Psyonix</string>
     <string name="gameRocketleaguedeveloper">Psyonix</string>
     <string name="gameRocketleagueupdates">Rocket League Patch Notes v2.66\n\nNew Features:\n- Playlist population display\n- Flip reset indicator\n- Visible MMR\n- Boost timer visualization\n\nUpdates:\n- New quick chats\n- Training improvements\n- Queue menu changes\n\nBug Fixes:\n- Fixed arena visibility issues\n- Fixed tournament creation bug\n- Fixed duplicate notifications\n- Fixed cosmetic issues</string>
+    <string name="done">DONE</string>
+    <string name="onboardingtext">WHAT GENRE INTERESTS YOU?</string>
+    <string name="all_gamestext">All Games</string>
+    <string name="hometext">Home</string>
+    <string name="preferrencestext">CHANGE YOUR PREFERENCES</string>
+    <string name="recommendmeiacardtext">This game was recommended for you because your interested in the following genres:</string>
 
 
 </resources>
