@@ -77,6 +77,22 @@ public class OnboardingActivity extends AppCompatActivity {
             }
         }
 
+        onboardingchipGroup.setOnCheckedStateChangeListener((group, checkedIds) -> {
+
+            boolean checkedIdNotEmpty = !checkedIds.isEmpty();
+            if (checkedIdNotEmpty) {
+                doneButton.setEnabled(true);
+            } else {
+                doneButton.setEnabled(false);
+            }
+            if(checkedIdNotEmpty){
+                doneButton.setBackgroundColor(getResources().getColor(R.color.coolblue));
+            }else{
+                doneButton.setBackgroundColor(getResources().getColor(R.color.asphaltwhisper));
+            }
+
+        });
+
         for (String genre : genreList) {
             Chip chip = new Chip(this);
             chip.setText(genre);
@@ -87,7 +103,7 @@ public class OnboardingActivity extends AppCompatActivity {
             chip.setClickable(true);
             chip.setChipBackgroundColorResource(R.color.asphaltwhisper);
 
-            if (savedGenres.contains(genre)) {
+            if (savedGenres.contains(genre.trim().toLowerCase())) {
                 chip.setChecked(true);
             }
 
@@ -106,28 +122,14 @@ public class OnboardingActivity extends AppCompatActivity {
             onboardingchipGroup.addView(chip);
         }
 
-        onboardingchipGroup.setOnCheckedStateChangeListener((group, checkedIds) -> {
 
-            boolean checkedIdNotEmpty = !checkedIds.isEmpty();
-            if (checkedIdNotEmpty) {
-                doneButton.setEnabled(true);
-            } else {
-                doneButton.setEnabled(false);
-            }
-            if(checkedIdNotEmpty){
-                doneButton.setBackgroundColor(getResources().getColor(R.color.coolblue));
-            }else{
-                doneButton.setBackgroundColor(getResources().getColor(R.color.asphaltwhisper));
-            }
-
-        });
 
         doneButton.setOnClickListener(v -> {
             ArrayList<String> selectedTags = new ArrayList<>();
             for (int i = 0; i < onboardingchipGroup.getChildCount(); i++) {
                 Chip chip = (Chip) onboardingchipGroup.getChildAt(i);
                 if (chip.isChecked()) {
-                    selectedTags.add(chip.getText().toString());
+                    selectedTags.add(chip.getText().toString().trim().toLowerCase());
                 }
             }
 

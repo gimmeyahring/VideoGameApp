@@ -11,6 +11,8 @@ public class Allgames {
 
     public static void loadallgames(Context context) {
 
+        if(!allgames.isEmpty()){return;}
+
         List<String> peakTags = new ArrayList<>(
                 Arrays.asList("Multiplayer", "Co-op", "Indie", "Platformer", "Adventure"));
         List<String> daveTags = new ArrayList<>(

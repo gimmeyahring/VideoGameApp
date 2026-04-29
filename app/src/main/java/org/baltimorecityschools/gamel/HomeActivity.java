@@ -58,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
 
-            if(gameRecommendationScore>gameRecommendationTopScore){
+            if(gameRecommendationScore>=gameRecommendationTopScore){
                 gameRecommendationTopScore = gameRecommendationScore;
                 recommenedGame = game;
             }
