@@ -45,7 +45,7 @@ public class OnboardingActivity extends AppCompatActivity {
             onboardingTextview.setText(R.string.preferrencestext);
 
 
-            savedGenres = prefs.getStringSet("preferredGenres", new HashSet<>());
+            savedGenres = new HashSet<>(prefs.getStringSet("preferredGenres", new HashSet<>()));
         }
 
         Allgames.loadallgames(this);
@@ -105,6 +105,7 @@ public class OnboardingActivity extends AppCompatActivity {
 
             if (savedGenres.contains(genre.trim().toLowerCase())) {
                 chip.setChecked(true);
+                chip.setChipBackgroundColorResource(R.color.coolblue);
             }
 
             chip.setOnCheckedChangeListener((buttonView, isChecked) -> {

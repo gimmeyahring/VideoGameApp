@@ -52,15 +52,20 @@ public class HomeActivity extends AppCompatActivity {
             int gameRecommendationScore = 0;
             if(game.getTags() != null){
                 for(String tag : game.getTags()){
-                    if(savedGenres.contains(tag)){
+                    String editedTags = tag.trim().toLowerCase();
+                    if(savedGenres.contains(editedTags)){
                         gameRecommendationScore++;
                     }
                 }
             }
 
-            if(gameRecommendationScore>=gameRecommendationTopScore){
+            if(gameRecommendationScore>gameRecommendationTopScore){
                 gameRecommendationTopScore = gameRecommendationScore;
                 recommenedGame = game;
+            } else if(gameRecommendationScore == gameRecommendationTopScore){
+                if(Math.random() < 0.5){
+                    recommenedGame = game;
+                }
             }
         }
 
