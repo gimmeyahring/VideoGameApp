@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
@@ -19,13 +20,13 @@ import java.util.Set;
 
 public class HomeActivity extends AppCompatActivity {
 
-    Button allgamesButton;
-    Button preferrencesButton;
+
     MaterialCardView recomendationMediacard;
     ImageView recomendationMediacardImage;
     TextView recommendMediacardTitleTextView;
     TextView recommendMediacardDescriptionTextView;
     ChipGroup recommendMediacardtagContainer;
+    BottomNavigationView bottomNavigationView;
 
 
 
@@ -33,17 +34,21 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        allgamesButton = findViewById(R.id.allgamesButton);
-        preferrencesButton = findViewById(R.id.preferrencesButton);
+
         recomendationMediacard = findViewById(R.id.recomendationMediacardId);
         recomendationMediacardImage = findViewById(R.id.recommendationMediacardImage);
         recommendMediacardTitleTextView = findViewById(R.id.recommendMediacardTitleTextView);
         recommendMediacardDescriptionTextView = findViewById(R.id.recommendMediacardDescriptionTextView);
         recommendMediacardtagContainer = findViewById(R.id.recommendMediacardtagContainer);
+
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.homeNavigationButton);
+        NavigationBarLogic.setupNavigationBar(this, bottomNavigationView);
+
         Allgames.loadallgames(this);
 
         SharedPreferences prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        Set<String> savedGenres = prefs.getStringSet("preferredGenres", new HashSet<>());;
+        Set<String> savedGenres = prefs.getStringSet("preferredGenres", new HashSet<>());
 
         Game recommenedGame = null;
         int gameRecommendationTopScore = -1;
@@ -77,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
             recommendMediacardDescriptionTextView.setText(game.getDescription());
 
             for(String tag : recommenedGame.getTags()){
-                if(savedGenres.contains(tag)){
+                if(savedGenres.contains(tag.trim().toLowerCase())){
                     Chip chip = new Chip(this);
                     chip.setText(tag);
                     chip.setChipBackgroundColorResource(R.color.asphaltwhisper);
@@ -107,16 +112,8 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        allgamesButton.setOnClickListener(v -> {
-            Intent intent = new Intent(this, AllGamesActivity.class);
-            startActivity(intent);
-        });
 
-        preferrencesButton.setOnClickListener(v -> {
-            Intent intent = new Intent(this, OnboardingActivity.class);
-            intent.putExtra("onboarding_edit", true);
-            startActivity(intent);
-        });
+
 
     }
 }

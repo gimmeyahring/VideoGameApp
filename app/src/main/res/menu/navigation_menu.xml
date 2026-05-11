@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/settingsNavigatioButton"
+        android:id="@+id/settingsNavigationButton"
         android:icon="@mipmap/ic_settingsicon"
-        android:title="Settings"/>
+        android:title="@string/settings"/>
     <item
         android:id="@+id/homeNavigationButton"
         android:icon="@mipmap/ic_homeicon"
-        android:title="Home"/>
+        android:title="@string/home"/>
     <item
         android:id="@+id/searchNavigationButton"
         android:icon="@mipmap/ic_search"
-        android:title="Search"/>
-
-
-
+        android:title="@string/search"/>
+    <item
+        android:id="@+id/allgamesNavigationButton"
+        android:icon="@mipmap/ic_allgames"
+        android:title="@string/all_games"/>
 </menu>
+
+
+

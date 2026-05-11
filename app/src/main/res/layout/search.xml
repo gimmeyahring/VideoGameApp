@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    >
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/search_games_hinttext"
+        android:textColor="@color/white"
+        android:textColorHint="#AAAAAA"
+        android:background="@drawable/searchback"
+        android:paddingHorizontal="16dp"
+        android:drawablePadding="10dp"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:inputType="text"
+        android:textSize="16sp"
+        />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/searchChipGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        app:chipSpacing="8dp"
+        android:paddingHorizontal="20dp"
+        >
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/titleChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gametitle"
+            android:checked="true"
+            app:chipBackgroundColor="@color/searchchipcolor"
+            android:textColor="@color/white"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/genreChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gamegen"
+            app:chipBackgroundColor="@color/searchchipcolor"
+            android:textColor="@color/white"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/developerChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gamedev"
+            app:chipBackgroundColor="@color/searchchipcolor"
+            android:textColor="@color/white"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/publisherChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gamepub"
+            app:chipBackgroundColor="@color/searchchipcolor"
+            android:textColor="@color/white"/>
+
+    </com.google.android.material.chip.ChipGroup>
+
+</LinearLayout>

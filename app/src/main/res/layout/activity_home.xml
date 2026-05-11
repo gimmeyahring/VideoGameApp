@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:gravity="top"
+
     android:id="@+id/main"
     android:background="@color/chromophobicblack"
 
@@ -12,79 +12,55 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/bottomNavigationView"
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/homeScrollView">
-
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/homeScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            tools:ignore="MissingConstraints">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/hometext"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:paddingStart="15dp"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="25dp"/>
-
-            <include
-                layout="@layout/recommendationmediacard"
-                android:id="@+id/recomendationMediacard"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="25dp"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/allgamesButton"
-                android:text="@string/all_gamestext"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                style="@style/SquareButton"
-                android:backgroundTint="@color/navigationcolor"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                android:layout_gravity="center"/>
+                android:orientation="vertical">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/preferrencesButton"
-                android:text="@string/preferrencestext"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                style="@style/SquareButton"
-                android:backgroundTint="@color/navigationcolor"
-                android:gravity="center"
-                android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="15dp"
+                    android:text="@string/hometext"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
-        </LinearLayout>
-    </ScrollView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp" />
+
+                <include
+                    android:id="@+id/recomendationMediacard"
+                    layout="@layout/recommendationmediacard" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp" />
 
 
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp" />
 
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/bottomNavigationViewInclude"
+            layout="@layout/navigationbar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

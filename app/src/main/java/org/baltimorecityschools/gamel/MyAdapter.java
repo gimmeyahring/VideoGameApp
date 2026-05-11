@@ -14,8 +14,13 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     List<Game> data;
+    List<Game> oldData;
+
+
     public MyAdapter(List<Game> data) {
-        this.data = data;
+        this.data = new ArrayList<>(data);
+        this.oldData = new ArrayList<>(data);
+
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -64,6 +69,45 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return data.size();
     }
 
+    public void filter(String text, String filterType) {
 
+        data.clear();
+        if (text.isEmpty()) {
+            data.addAll(oldData);
+        } else {
+            text = text.toLowerCase();
+            for (Game game : oldData) {
+                if (filterType.equals("title")) {
+                    if (game.getTitle().toLowerCase().contains(text)) {
+                        data.add(game);
+                    }
+                } else if (filterType.equals("genre")) {
+                    if (game.getTags() != null) {
+                        for (String tag : game.getTags()) {
+                            if (tag.toLowerCase().contains(text)) {
+                                data.add(game);
+                                break;
+                            }
+                        }
+                    }
+                } else if (filterType.equals("developer")) {
+                    if (game.getDevelopers() != null) {
+                        if (game.getDevelopers().toLowerCase().contains(text)) {
+                            data.add(game);
+                        }
+                    }
+                } else if (filterType.equals("publisher")) {
+                    if (game.getPublishers() != null) {
+                        if (game.getPublishers().toLowerCase().contains(text)) {
+                            data.add(game);
+                        }
+                    }
 
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
 }
+
+
