@@ -59,7 +59,8 @@
 
         <include
             android:id="@+id/bottomNavigationViewInclude"
-            layout="@layout/navigationbar" />
+            layout="@layout/navigationbar"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

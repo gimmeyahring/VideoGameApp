@@ -66,11 +66,26 @@ public class MyRecommendationAdapter extends RecyclerView.Adapter<MyRecommendati
                 if (savedGenres.contains(editedTags)) {
                     Chip chip = new Chip(holder.itemView.getContext());
                     chip.setText(tag);
-                    chip.setChipBackgroundColorResource(R.color.asphaltwhisper);
+                    if(chip.isChecked()){
+                        chip.setChipBackgroundColorResource(R.color.coolblue);
+                    }else {
+                        chip.setChipBackgroundColorResource(R.color.asphaltwhisper);
+                    }
                     chip.setTextColor(holder.itemView.getResources().getColor(R.color.white));
                     chip.setChipCornerRadius(50f);
                     chip.setTextSize(12f);
                     holder.recommendMediacardtagContainer.addView(chip);
+
+
+
+                    chip.setOnClickListener(v -> {
+                        Intent intent = new Intent(v.getContext(), TagActivity.class);
+                        intent.putExtra("tag", tag);
+                        v.getContext().startActivity(intent);
+                    });
+
+
+
                 }
 
 
