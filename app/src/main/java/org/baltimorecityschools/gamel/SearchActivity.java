@@ -51,7 +51,10 @@ public class SearchActivity extends AppCompatActivity {
         developerChip = findViewById(R.id.developerChip);
         publisherChip = findViewById(R.id.publisherChip);
         recyclerView = findViewById(R.id.recyclerView);
-        View view = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        NavigationBarLogic.setupNavigationBar(this, bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.searchNavigationButton);
+
 
         Allgames.loadallgames(this);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
@@ -60,9 +63,6 @@ public class SearchActivity extends AppCompatActivity {
 
         filterType = "title";
 
-        BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.searchNavigationButton);
-        NavigationBarLogic.setupNavigationBar(this, bottomNavigationView);
 
         Chip[] chips = {titleChip, genreChip, developerChip, publisherChip};
         for (Chip chip : chips) {
@@ -115,6 +115,11 @@ public class SearchActivity extends AppCompatActivity {
 
         });
 
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        bottomNavigationView.setSelectedItemId(R.id.searchNavigationButton);
     }
 
 
